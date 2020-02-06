@@ -94,3 +94,15 @@
 //   }
 // };
 // console.log(aboutMe.do());
+
+// Ex4: Fix with bind
+const aboutMe = {
+  name: "Hoan Nguyen",
+  do() {
+    function do2() {
+      return `${this.name}`;
+    }
+    return do2.bind(this);
+  }
+};
+console.log(aboutMe.do()());
