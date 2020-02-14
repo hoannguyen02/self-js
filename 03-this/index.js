@@ -1,27 +1,25 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 
-/**
- * A property of an execution context (global, function or eval)
- * In non–strict mode: Always a reference to an object
- * In strict mode can be any value
- */
+// A property of an execution context: Always a reference to an object if non–strict mode, otherwise this can be any value
 
-// Ex1: In strict mode this is undefined
+// In strict mode this is undefined
 // "use strict";
 // function a() {
-//   console.log(this);
+//   console.log(this); // undefined
 // }
 // a();
 
-// Ex2: In non–strict mode this is global or window(browser)
+// In non–strict mode this is global or window(browser)
 // function a() {
-//   console.log(this === global);
+//   console.log(this === global); // True
 // }
 // a();
 
 /**
- * Allow us to access properties of object
+ ******* Benefits of using this ***********
  */
+
+// Allow us to access properties of object
 // const aboutMe = {
 //   name: "Hoan Nguyen",
 //   job: "Coding",
@@ -33,7 +31,7 @@
 //     return `${this.do()}, ${this.hobbies}`;
 //   }
 // };
-// console.log(aboutMe.favorite());
+// console.log(aboutMe.favorite()); // Hoan Nguyen Love Coding
 
 /**
  * Allow us to share function for multiple object
@@ -52,8 +50,8 @@
 //   job: "Teaching",
 //   do: whatDoYouDo
 // };
-// aboutMe.do();
-// aboutHim.do();
+// aboutMe.do(); // Coding
+// aboutHim.do(); // Teaching
 
 /**
  * Fix This (inside method) refer window/global
@@ -68,7 +66,7 @@
 //     return do2();
 //   }
 // };
-// console.log(aboutMe.do());
+// console.log(aboutMe.do()); // Undefined
 
 // Ex2: Define that variable then assign this for it
 // const aboutMe = {
@@ -81,7 +79,7 @@
 //     return do2();
 //   }
 // };
-// console.log(aboutMe.do());
+// console.log(aboutMe.do()); // Hoan Nguyen
 
 // Ex3: Fix with arrow function
 // const aboutMe = {
@@ -93,16 +91,16 @@
 //     return do2();
 //   }
 // };
-// console.log(aboutMe.do());
+// console.log(aboutMe.do()); // Hoan Nguyen
 
 // Ex4: Fix with bind
-const aboutMe = {
-  name: "Hoan Nguyen",
-  do() {
-    function do2() {
-      return `${this.name}`;
-    }
-    return do2.bind(this);
-  }
-};
-console.log(aboutMe.do()());
+// const aboutMe = {
+//   name: "Hoan Nguyen",
+//   do() {
+//     function do2() {
+//       return `${this.name}`;
+//     }
+//     return do2.bind(this);
+//   }
+// };
+// console.log(aboutMe.do()()); // Hoan Nguyen
