@@ -1,6 +1,6 @@
 /**
  * Bind return new function for us, this way help us fix this reference window object in #03 chapter
- * Bind also use  to reduce functions of more than one argument to functions of one argument with the help of lambda calculus(Currying)
+ * Bind also use to reduce functions of more than one argument to functions of one argument with the help of lambda calculus(Currying)
  */
 
 // Ex1

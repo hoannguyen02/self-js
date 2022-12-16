@@ -30,3 +30,17 @@
 //   console.log(i);
 // }
 // console.log(i);
+
+// Ex3
+// for (var index = 0; index < 5; index++) {
+//   setTimeout(() => {
+//     console.log(index * 20);
+//   }, 10);
+// }
+
+// Ex4
+// for (let index = 0; index < 5; index++) {
+//   setTimeout(() => {
+//     console.log(index * 20);
+//   }, 10);
+// }

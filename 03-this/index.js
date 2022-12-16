@@ -68,6 +68,15 @@
 // };
 // console.log(aboutMe.do()); // Undefined
 
+// const aboutMe = {
+//   name: "Hoan Nguyen",
+//   do() {
+//     return `${this.name}`;
+//   },
+// };
+// const me = aboutMe.do;
+// console.log(me); // Undefined
+
 // Ex2: Define that variable then assign this for it
 // const aboutMe = {
 //   name: "Hoan Nguyen",
