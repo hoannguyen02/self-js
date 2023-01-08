@@ -1,17 +1,17 @@
 function solution(arr) {
   let i = 0;
   let j = 0;
-  let max = -1;
+  let maxDistance = -1;
   while (j < arr.length) {
     if (arr[j] === 1) {
       const distance = j - i;
-      max = Math.max(max, distance);
+      maxDistance = Math.max(maxDistance, distance);
       i = j;
     }
     j++;
   }
 
-  return max;
+  return maxDistance;
 }
 
 console.log(solution([1, 1]));
