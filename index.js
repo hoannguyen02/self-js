@@ -1,21 +1,18 @@
 function solution(arr) {
-  let i = 1;
-  let result = null;
-  while (i < arr.length) {
-    if(!arr.includes(i)) {
-      return i;
+  let result = 1;
+  const seen = {};
+  for(const a of arr) {
+    if(result === a) {
+      let newResult = result + 1;
+      while (seen[newResult] !== undefined) {
+        newResult++;
+      }
+      result = newResult;
     }
-    i++
+    seen[a] = a;
   }
-
-  if(result == null) {
-    return i + 1;
-  }
-
   return result;
 }
-
-
 
 console.log(solution([1, 3, 6, 4, 1, 2]));
 console.log(solution([1, 2, 3]));
