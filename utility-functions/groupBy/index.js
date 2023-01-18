@@ -20,10 +20,11 @@
 
 const groupBy = (arr, key) => {
   return arr.reduce((acc, cur) => {
-    if (acc[cur[key]] === undefined) {
-      acc[cur[key]] = [];
+    const objKey = cur[key];
+    if (acc[objKey] === undefined) {
+      acc[objKey] = [];
     }
-    acc[cur[key]].push(cur);
+    acc[objKey].push(cur);
     return acc;
   }, {});
 };

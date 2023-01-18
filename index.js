@@ -1,20 +1,24 @@
-function solution(arr) {
-  let max = -1;
-  const seen = {};
-  for(const current of arr) {
-    for (const key in seen) {
-      seen[key] = seen[key] + current;
-    }
-    if (seen[current] !== undefined) {
-      max = Math.max(seen[current], max);
+function solution(str) {
+  if(str.length <= 1) {
+    return -1;
+  }
+  const cache = {};
+  let maxDistance = -1;
+  for (let i = 0; i < str.length; i++) {
+    const current = str[i];
+    const prevSeen = cache[current];
+    if (prevSeen !== undefined) {
+      const distance = i - prevSeen;
+      maxDistance = Math.max(distance, maxDistance);
     } else {
-      seen[current] = current;
+      cache[current] = i;
     }
   }
-
-  return max;
+  return maxDistance;
 }
 
-console.log(solution([1, 3, 6, 1, 6, 6, 9, 9]));
-console.log(solution([5, 2, 4, 3]));
-console.log(solution([2, 2, 2, 3, 2, 3]));
+console.log(solution(""));
+console.log(solution("a"));
+console.log(solution("abcbdca"));
+console.log(solution("abccabb"));
+console.log(solution("abcbdaac"));
