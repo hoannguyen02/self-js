@@ -1,17 +1,17 @@
-function solution(x, y) {
-  let i = 0;
-  let j = 0;
+const solution = (y, x) => {
+  let xPointer = 0;
+  let yPointer = 0;
   let filteredX = "";
-  while (i < x.length && j < y.length) {
-    if (x[i] === y[j]) {
-      filteredX += x[i];
-      j++;
+  while (yPointer < y.length && xPointer < x.length) {
+    if (x[xPointer] === y[yPointer]) {
+      filteredX += x[xPointer];
+      yPointer++;
     }
-    i++;
+    xPointer++;
   }
-  return filteredX.length === y.length;
-}
+  return y.length === filteredX.length;
+};
 
-console.log(solution("ABCD", "AC"));
-console.log(solution("ABCD", "CA"));
-console.log(solution("ABCAD", "BA"));
+console.log(solution("AC", "ABCD"));
+console.log(solution("CA", "ABCD"));
+console.log(solution("BA", "ABCAD"));

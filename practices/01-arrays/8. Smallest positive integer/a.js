@@ -1,18 +1,25 @@
-function solution(arr) {
-  let result = 1;
-  const seen = {};
-  for (const a of arr) {
-    if (result === a) {
-      let newResult = result + 1;
-      while (seen[newResult] !== undefined) {
-        newResult++;
-      }
-      result = newResult;
+const solution = (arr) => {
+  const seenNums = {};
+  let smallLeastNum = 1;
+
+  const findSmallLeastNum = () => {
+    smallLeastNum++;
+    while (smallLeastNum in seenNums) {
+      smallLeastNum++;
     }
-    seen[a] = a;
+    return smallLeastNum;
+  };
+
+  for (let a of arr) {
+    if (a === smallLeastNum) {
+      smallLeastNum = findSmallLeastNum();
+    } else {
+      seenNums[a] = a;
+    }
   }
-  return result;
-}
+
+  return smallLeastNum;
+};
 
 console.log(solution([1, 3, 6, 4, 1, 2]));
 console.log(solution([1, 2, 3]));

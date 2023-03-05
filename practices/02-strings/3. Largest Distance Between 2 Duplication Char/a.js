@@ -1,22 +1,22 @@
-function solution(str) {
-  let i = 0;
-  let j = 0;
-  let max = -1;
-  while (j < str.length) {
-    if (str[j] === "1") {
-      const distance = j - i;
-      max = Math.max(max, distance);
-      i = j;
+const solution = (str) => {
+  if (str.length <= 1) return -1;
+
+  let maxDistance = 0;
+  const seenChar = {};
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char in seenChar) {
+      const distance = i - (seenChar[char] + 1);
+      maxDistance = Math.max(maxDistance, distance);
+    } else {
+      seenChar[char] = i;
     }
-    j++;
   }
+  return maxDistance;
+};
 
-  return max;
-}
-
-console.log(solution("11"));
-console.log(solution("101"));
-console.log(solution("1001"));
-console.log(solution("100001"));
-console.log(solution("10010000101"));
-console.log(solution("10000100100100000101"));
+console.log(solution("abcbdca"));
+console.log(solution("abccabb"));
+console.log(solution("abcbdaac"));
+console.log(solution(""));
+console.log(solution("a"));

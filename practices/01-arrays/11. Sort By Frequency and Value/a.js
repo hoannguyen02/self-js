@@ -8,22 +8,22 @@
 
 function frequencySort(nums) {
   if (nums.length === 1) return nums;
-  const cache = {};
+  const frequencyNumMap = {};
   for (const num of nums) {
-    if (cache[num] !== undefined) {
-      cache[num] += 1;
+    if (num in frequencyNumMap) {
+      frequencyNumMap[num].push(num);
     } else {
-      cache[num] = 1;
+      frequencyNumMap[num] = [num];
     }
   }
 
-  const newNums = Object.keys(cache)
-    .map((key) => ({ key, value: cache[key] }))
+  const newNums = Object.keys(frequencyNumMap)
+    .map((key) => ({ key, values: frequencyNumMap[key] }))
     .sort((a, b) => {
-      if (a.value > b.value) {
+      if (a.values.length > b.values.length) {
         return 1;
       }
-      if (a.value === b.value) {
+      if (a.values.length === b.values.length) {
         if (parseInt(a.key) >= parseInt(b.key)) {
           return -1;
         }
@@ -31,17 +31,9 @@ function frequencySort(nums) {
       }
 
       return -1;
-    });
-  const results = newNums.reduce((acc, cur) => {
-    const values = [];
-    for (let i = 0; i < cur.value; i++) {
-      values.push(parseInt(cur.key));
-    }
-
-    return [...acc, ...values];
-  }, []);
-
-  return results;
+    })
+    .reduce((acc, cur) => [...acc, ...cur.values], []);
+  return newNums;
 }
 
 console.log(frequencySort([2, 3, 1, 3, 2]));

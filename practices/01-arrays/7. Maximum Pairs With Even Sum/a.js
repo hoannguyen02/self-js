@@ -3,22 +3,22 @@ function solution(arr) {
   
   let i = 0;
   let count = 0;
-  const passed = {};
+  const countedMap = {};
   while (i < arr.length - 1) {
     const sum = arr[i] + arr[i + 1];
     if (sum % 2 === 0) {
-      if (!passed[i - 1]) {
-        passed[i] = true;
+      if (!countedMap[i - 1]) {
+        countedMap[i] = true;
         count++;
       }
     } else {
-      passed[i] = false;
+      countedMap[i] = false;
     }
     i++;
   }
 
   const lastPair = arr[0] + arr[arr.length - 1];
-  if (lastPair % 2 === 0 && !passed[arr.length - 2] && !passed[0]) {
+  if (lastPair % 2 === 0 && !countedMap[arr.length - 2] && !countedMap[0]) {
     count++;
   }
 

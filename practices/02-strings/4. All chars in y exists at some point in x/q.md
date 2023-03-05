@@ -2,15 +2,15 @@
  If all of the characters from y appear in x in the correct order return the boolean `true`, otherwise return `false`
  * Examples
 ```
-x = "ABCD"
 y = "AC"
+x = "ABCD"
 result = true
 
-x = "ABCD"
 y = "CA"
+x = "ABCD"
 result = false
 
-x = "ABCAD"
 y = "BA"
+x = "ABCAD"
 result = true
 ```

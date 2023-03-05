@@ -3,7 +3,7 @@
 ```
 "" => -1
 "a" => -1
-"abcbdca" => 6
-"abccabb" => 5
-"abcbdaac" => 6
+"abcbdca" => 5
+"abccabb" => 4
+"abcbdaac" => 5
 ```
