@@ -29,7 +29,7 @@ Both are excuse function, `apply` receive arguments as an array, however `call` 
 
 7. Have you using `bind`?
 
-Bind return new function for us, help us reduce function with more thant one argument to a function with one argument.
+Bind return new function for us, help us reduce function with more than one argument to a function with one argument.
 
 8. What promises are and why they are useful?'
 

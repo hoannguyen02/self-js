@@ -30,3 +30,7 @@
 6. What is different when we add srcset to the image tag?
 
     It allows us to serve different images to users depending on their device display width to help increase performance.
+7. What is different between repaint and reflow? reflow has a wider impact than repaint.
+
+`repaint`: The process of updating the visual appearance of an element without changing its layout such as changing color, background
+`reflow`: The process of computing the position and layout of an element, it affects the layout such as  modify width/height, add/remove elements

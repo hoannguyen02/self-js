@@ -11,3 +11,5 @@
 11. Avoid inline function definition in render function
 12. Avoid using index as key for map
 13. Avoid props in initial states, using it directly instead(shouldn't assign it to state)
+14. Virtualization(react-window/react-virtualized) or pagination
+15. Debouncing
