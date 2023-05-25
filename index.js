@@ -1,22 +1,18 @@
-const solution = (str) => {
-  if (str.length <= 1) return -1;
+const solution = (arr) => {
+   const positiveIntegers = new Set();
+   for (const num of arr) {
+     if (num > 0) {
+       positiveIntegers.add(num);
+     }
+   }
+   // Find the smallest positive integer
+   let smallestNum = 1;
+   while (positiveIntegers.has(smallestNum)) {
+     smallestNum++;
+   }
 
-  let maxDistance = 0;
-  const seenChar = {};
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (char in seenChar) {
-      const distance = i - (seenChar[char] + 1);
-      maxDistance = Math.max(maxDistance, distance);
-    } else {
-      seenChar[char] = i;
-    }
-  }
-  return maxDistance;
+   return smallestNum;
 };
-
-console.log(solution("abcbdca"));
-console.log(solution("abccabb"));
-console.log(solution("abcbdaac"));
-console.log(solution(""));
-console.log(solution("a"));
+console.log(solution([1, 3, 6, 4, 1, 2]));
+console.log(solution([1, 2, 3]));
+console.log(solution([-1, -3]));

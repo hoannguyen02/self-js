@@ -10,7 +10,6 @@ const solution = (strs) => {
       cache[sortedS] = [s];
     }
   }
-  // console.log('cache', cache);
   const results = Object.keys(cache)
     .map((key) => ({ key, values: cache[key] }))
     .sort((a, b) => a.values.length - b.values.length)

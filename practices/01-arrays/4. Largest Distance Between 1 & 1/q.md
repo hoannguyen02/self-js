@@ -1,4 +1,4 @@
- * Return the farthest distance between 1 and 1 in the given string
+ * Return the farthest distance between 1 and 1 in the given array
  * Examples
 ```
 [1, 1] => 1

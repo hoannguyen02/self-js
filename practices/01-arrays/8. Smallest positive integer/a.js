@@ -1,26 +1,18 @@
 const solution = (arr) => {
-  const seenNums = {};
-  let smallLeastNum = 1;
-
-  const findSmallLeastNum = () => {
-    smallLeastNum++;
-    while (smallLeastNum in seenNums) {
-      smallLeastNum++;
-    }
-    return smallLeastNum;
-  };
-
-  for (let a of arr) {
-    if (a === smallLeastNum) {
-      smallLeastNum = findSmallLeastNum();
-    } else {
-      seenNums[a] = a;
+  const positiveIntegers = new Set();
+  for (const num of arr) {
+    if (num > 0) {
+      positiveIntegers.add(num);
     }
   }
+  // Find the smallest positive integer
+  let smallestNum = 1;
+  while (positiveIntegers.has(smallestNum)) {
+    smallestNum++;
+  }
 
-  return smallLeastNum;
+  return smallestNum;
 };
-
 console.log(solution([1, 3, 6, 4, 1, 2]));
 console.log(solution([1, 2, 3]));
 console.log(solution([-1, -3]));

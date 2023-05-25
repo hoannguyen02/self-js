@@ -4,17 +4,15 @@
  * Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
  */
 
-const input = [[], 1, 2, [3, 4, [5, 6, [7, 8, [9, 10], []]]]];
-const flattenArr = (array) => {
+const solution = (arr) => {
   let results = [];
-  for (const a of array) {
+  for (const a of arr) {
     if (Array.isArray(a)) {
-      results = [...results, ...flattenArr(a)];
+      results = [...results, ...solution(a)];
     } else {
       results.push(a);
     }
   }
   return results;
 };
-
-console.log(flattenArr(input));
+console.log(solution([[], 1, 2, [3, 4, [5, 6, [7, 8, [9, 10], []]]]]));
