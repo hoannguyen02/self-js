@@ -1,20 +1,20 @@
 # Can You Describe the Steps Involved in Software Development
 There are different models or methodologies in software development such as waterfall, agile. There are some common steps:
-- **Requirement analysis and resource planning:** This is a step where developers identify goals, scopes of the project, clear business requirements, estimate time and resources, etc.
-- **Design and prototype:** This is a step where developers design and structure the software and make prototype for it. 
-- **Development:** This is a step where developers write code using various programming languages, tools.
-- **Testing** This is a step where developers test the software for errors, bugs, defects.
-- **Launching/publishing**: This is a step where developers deploy/release the software to the customers.
-- **Maintaining & updating**: This is a step where developers monitor, maintain the software, fixing bugs or updating new features.
+- **Requirement analysis and resource planning:** This is a step where we identify goals, scopes of the project, clear requirements, estimate time and resources, etc.
+- **Design and prototype:** This is a step where we design and structure the software and make prototype for it. 
+- **Development:** This is a step where we write code using various programming languages, tools.
+- **Testing** This is a step where we test the software for errors, bugs, defects.
+- **Launching/publishing**: This is a step where we deploy/release the software to the customers.
+- **Maintaining & updating**: This is a step where we monitor, maintain the software, fixing bugs or updating new features.
 
 # Tell Me About a Software Development Project You Completed Successfully
 It is a betting/lottery project when I work abroad in Manila, Philippines. At that time, I didn't have much experience especially javascript library/frameworks such as Angular, React. I have to pick a framework for frontend project, after carefully consideration between Angular vs React, I decided to pick Angular, Basically it provide production built already for us.
 
 # How Do You Ensure Quality and Fix Errors?
-I use tools such as linter(tslint/eslint), type checker(typescript), spell checker, try to cover unit test for all functionalities/utils, self review and review with the team.
+I use tools such as linter(tslint/eslint), type checker(typescript), spell checker, try to cover unit test for all functionalities/utils, self review and review by the team.
 
 # What are your thoughts on software testing?
-Software testing is very important. It helps to make sure the software meets the business requirements and expectations. Software testing also helps improve the quality of the code, reduce the issues after release/publish to the users.
+Software testing is very important. It helps to make sure the software meets the business requirements and expectations. Software testing also helps improve the quality of the code, reduce the issues on production (after release/publish to the users).
 
 # Describe a difficult bug you were tasked with fixing in a large application. How did you debug the issue?
 Let me share the bug, it is the home page bug, it loads too slow, normally takes minutes to load. At that time I asked my boss to make sure I understand completely the all the UI part and behaviors.
@@ -41,11 +41,11 @@ The issue is basically everything rendered server side. For example there are ov
 # When you review other programmers' code what are those things you review?
 I usually follow the code review check list.
 - Readability: The code is easy to read, understand, and the code follow coding conventions.
-- Functionality: The code meets the requirements.
+- Functionality: The code works and meets the requirements.
 - Maintainability: The code easy to modify and extend, look for duplication code
 - Performance: The code is efficient and optimized, look for issues such as memory leaks, infinity loop 
-- Security: The code is secure, look for issue such as injection attacks
-- Testability: The code is well test enough, look for missing test cases
+- Security: The code is secure, look for issue such as injection attacks, credentials in code
+- Testability: The code is well test enough, look for missing test cases, possibility null, undefined issues
 
 # How do you mock a function in Jest?
 There are 2 ways to mock functions in Jest, either by creating a mock function to use in test code or write a manual mock to override a module dependency.
