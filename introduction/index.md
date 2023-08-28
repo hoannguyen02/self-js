@@ -1,0 +1,2 @@
+Thanks for sharing, let me share a little bit about myself. 
+I am Hoan, I have been working in web development for over 7 years, mostly working with javascript and javascript frameworks such as Node, React. I work with different teams in the world such as Norway, Singapore and different domains like Fintech, Ecommerce. Outside of coding I love traveling, playing chess and watching football. My favorite club is Liverpool. Yep, that's a bit about me. 

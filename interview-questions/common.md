@@ -2,13 +2,13 @@
 There are different models or methodologies in software development such as waterfall, agile. There are some common steps:
 - **Requirement analysis and resource planning:** This is a step where we identify goals, scopes of the project, clear requirements, estimate time and resources, etc.
 - **Design and prototype:** This is a step where we design and structure the software and make prototype for it. 
-- **Development:** This is a step where we write code using various programming languages, tools.
+- **Development:** This is a step where we write code using programming languages, frameworks.
 - **Testing** This is a step where we test the software for errors, bugs, defects.
 - **Launching/publishing**: This is a step where we deploy/release the software to the customers.
 - **Maintaining & updating**: This is a step where we monitor, maintain the software, fixing bugs or updating new features.
 
 # Tell Me About a Software Development Project You Completed Successfully
-It is a betting/lottery project when I work abroad in Manila, Philippines. At that time, I didn't have much experience especially javascript library/frameworks such as Angular, React. I have to pick a framework for frontend project, after carefully consideration between Angular vs React, I decided to pick Angular, Basically it provide production built already for us.
+It is a betting/lottery project when I work abroad in Manila, Philippines. At that time, I didn't have much experience especially javascript library/frameworks such as Angular, React. I have to pick a framework for frontend project, after carefully consideration between Angular vs React, I decided to pick Angular, Basically it provide production built  for us already.
 
 # How Do You Ensure Quality and Fix Errors?
 I use tools such as linter(tslint/eslint), type checker(typescript), spell checker, try to cover unit test for all functionalities/utils, self review and review by the team.
@@ -17,17 +17,16 @@ I use tools such as linter(tslint/eslint), type checker(typescript), spell check
 Software testing is very important. It helps to make sure the software meets the business requirements and expectations. Software testing also helps improve the quality of the code, reduce the issues on production (after release/publish to the users).
 
 # Describe a difficult bug you were tasked with fixing in a large application. How did you debug the issue?
-Let me share the bug, it is the home page bug, it loads too slow, normally takes minutes to load. At that time I asked my boss to make sure I understand completely the all the UI part and behaviors.
-(optional)
-- First section is Unassign deliveries table (with action can delete, assign delivery date)
-- Second section
-    - First part is searching text box to search any delivery (users can click to view detail of that delivery - Calendar and active delivery in second part bellow reflects immediately)
-    - Second part is calendar on the left we show the delivery count for that day based on method, some actions such as sms notifications, exporting excel file report filter and on the right we have all deliveries in day, and active delivery with actions such as reschedule, assign driver, add notes, etc.
-(end optional)
-The issue is basically everything rendered server side. For example there are over ten thousands records will be forced to load and rendered in table. So At that time I have to split into different steps/components which part can be render on server side, which part can be render on client side, which part can be lazy, etc. It took me 1 week to fix/optimize it. And my boss really appreciated about the result I made.
+Let me share the bug, it is a loading issue for the home page, it loads too slow, normally takes minutes to load. You know the main issue is the rendering part, the original code renders everything on the server side, I remember it fetched over ten thousand records data from the controller and rendered it in a table. It is not very efficient and extremely slow so I have to split it into different features for different components such as searching, filtering, scheduling, viewing. Then implement api endpoints for those components,  applied caching & lazy loading as well. It took me a week to fix it. 
 
 # Describe what you believe are the key principles of software engineering
+- Some functional programming principles make code readable, predictable, testable like
+    - Pure functions: Same inputs always return same output, reduce side-effects
+    - Immutability: Once variable declared it is unchangeable
+    - HOC (higher order function): Receive functions as arguments input or return functions as output
+    - Single responsibility: One function do one job
 - DRY (don't repeat yourself): Reducing the code duplication.
+- High cohesion and low coupling: Try to make component independently
 - Modularity: Divide software system into smaller and independent units or modules that can be developed, tested and maintained separately.
 - Maintainability: Keep simple, easy to read and modify.
 - TDD (test driven development): Writing test before writing code.
@@ -52,6 +51,8 @@ There are 2 ways to mock functions in Jest, either by creating a mock function t
 - Create a mock function with jest.fn().
 - Write manual mock: Create module file same name, interface as the module in a mocks directory (next to the module) and export by default. Then use jest.mock() to tell Jest using mock instead of actual module.
 
+# Do you know VueJS?
+- Yes, I maintained 1 project written in Vue version 2 in 2018. Fixed few bugs at that time then we fully convert it into Angular 2+.
 
 # Let's say you have a component with rendering problems, low performance. Clients complain about that. How do you approach that? (Rendering issue on client. how to debug/optimize)
 1. Identify the problem by analyze the component code to see if any unnecessary re-renders, inefficient data fetching, which part can be pre-renders, etc
