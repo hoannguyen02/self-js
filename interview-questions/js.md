@@ -35,6 +35,7 @@ Bind return new function for us, help us reduce function with more than one argu
 
 Promises return a promise to supply value at some point in the future instead immediately value.
 
+
 9. What is an example of an immutable object in Javascript?
 
 Buit-in types(numbers, strings) or objects(math, date) are immutable.
@@ -71,5 +72,12 @@ The Virtual DOM is a concept implemented by libraries in JS on top of browser AP
 
 The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components.
 
+16. What is different between Promise.all with Promise.race?
 
+- all: Fulfilled when all promised fulfilled, rejected when first rejected
+- race: fulfilled when first promised fulfilled, reject when first reject
 
+17. What is different between Promise.all with Promise.allSettled?
+
+- all: Fulfilled when all promised fulfilled, rejected when first rejected
+- allSettled: all fulfilled always (even has any rejected)

@@ -1,5 +1,5 @@
 /**
- * Functional Programing(FP):
+ * Functional Programming(FP):
  * FP is a programming paradigm
  * A style of building the structure and elements of computer programs that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data.
  * Consider before write a function:
